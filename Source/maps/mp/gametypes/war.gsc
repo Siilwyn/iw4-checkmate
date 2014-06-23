@@ -1,6 +1,8 @@
 // Checkmate by Siilwyn
 // Thanks to the community at http://itsmods.com/
-// Version 0.2
+
+// https://github.com/Siilwyn/iw4-checkmate/
+// Version 0.0
 
 #include maps\mp\_utility;
 #include maps\mp\gametypes\_hud_util;
@@ -68,7 +70,7 @@ onStartGameType()
     level.dieHardMode = getDvarInt("scr_cm_diehard");
     
     setDvar("ui_gametype", "Checkmate");
-    setDvar("didyouknow", "Checkmate modification made by Siilwyn. ^0(0.2)");
+    setDvar("didyouknow", "Checkmate modification made by Siilwyn. ^0(0.0)");
     setDvar("g_TeamName_Allies", "Guardians");
     setDvar("g_TeamName_Axis", "Assassins");
     setDvar("scr_teambalance", "0");
