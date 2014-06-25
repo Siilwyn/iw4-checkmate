@@ -610,8 +610,6 @@ setKillstreaks(role)
         killStreaks[8] = "precision_airstrike";
         killStreaks[16] = "predator_missile";
         killStreaks[20] = "sentry";
-        // Maybe bring back the autoshotgun killstreak
-        // killStreaks[24] = "mortars or napalm";
         killStreaks[32] = "ac130";
         if(level.nuke)
             killStreaks[40] = "nuke";
