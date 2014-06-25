@@ -200,90 +200,92 @@ giveLoadout(team, class, allowCopycat)
     
     primaryWeapon = undefined;
     
-    if(self.role == "assassin")
+    switch(self.role)
     {
-        loadoutPrimary = "cheytac";
-        loadoutPrimaryAttachment = "none";
-        loadoutPrimaryAttachment2 = "none";
-        loadoutPrimaryCamo = "none";
-        loadoutSecondary = "none";
-        loadoutSecondaryAttachment = "none";
-        loadoutSecondaryAttachment2 = "none";
-        loadoutSecondaryCamo = "none";
-        loadoutEquipment = "specialty_null";
-        loadoutPerk1 = "specialty_fastreload";
-        loadoutPerk2 = "specialty_explosivedamage";
-        loadoutPerk3 = "specialty_heartbreaker";
-        loadoutOffhand = "none";
-        loadoutDeathStreak = "specialty_null";
-    }
-    else if(self.role == "guard")
-    {
-        loadoutPrimary = level.weapons[self.weaponIndex];
-        loadoutPrimaryAttachment = "none";
-        loadoutPrimaryAttachment2 = "none";
-        loadoutPrimaryCamo = "none";
-        loadoutSecondary = "none";
-        loadoutSecondaryAttachment = "none";
-        loadoutSecondaryAttachment2 = "none";
-        loadoutSecondaryCamo = "none";
-        loadoutEquipment = "specialty_null";
-        loadoutPerk1 = "specialty_null";
-        loadoutPerk2 = "specialty_null";
-        loadoutPerk3 = "specialty_null";
-        loadoutOffhand = "none";
-        loadoutDeathStreak = "specialty_null";
-    }
-    else if(self.role == "king")
-    {
-        loadoutPrimary = "ranger";
-        loadoutPrimaryAttachment = "none";
-        loadoutPrimaryAttachment2 = "none";
-        loadoutPrimaryCamo = "none";
-        loadoutSecondary = "coltanaconda";
-        loadoutSecondaryAttachment = "none";
-        loadoutSecondaryAttachment2 = "none";
-        loadoutSecondaryCamo = "none";
-        loadoutEquipment = "claymore_mp";
-        loadoutPerk1 = "specialty_scavenger";
-        loadoutPerk2 = "specialty_null";
-        loadoutPerk3 = "specialty_pistoldeath";
-        loadoutOffhand = "none";
-        loadoutDeathStreak = "specialty_null";
-    }
-    else if(self.role == "initialAssassin")
-    {
-        loadoutPrimary = "cheytac";
-        loadoutPrimaryAttachment = "none";
-        loadoutPrimaryAttachment2 = "none";
-        loadoutPrimaryCamo = "none";
-        loadoutSecondary = "none";
-        loadoutSecondaryAttachment = "none";
-        loadoutSecondaryAttachment2 = "none";
-        loadoutSecondaryCamo = "none";
-        loadoutEquipment = "semtex_mp";
-        loadoutPerk1 = "specialty_fastreload";
-        loadoutPerk2 = "specialty_bulletdamage";
-        loadoutPerk3 = "specialty_heartbreaker";
-        loadoutOffhand = "none";
-        loadoutDeathStreak = "specialty_null";
-    }
-    else
-    {
-        loadoutPrimary = "usp";
-        loadoutPrimaryAttachment = "none";
-        loadoutPrimaryAttachment2 = "none";
-        loadoutPrimaryCamo = "none";
-        loadoutSecondary = "none";
-        loadoutSecondaryAttachment = "none";
-        loadoutSecondaryAttachment2 = "none";
-        loadoutSecondaryCamo = "none";
-        loadoutEquipment = "specialty_null";
-        loadoutPerk1 = "specialty_null";
-        loadoutPerk2 = "specialty_null";
-        loadoutPerk3 = "specialty_null";
-        loadoutOffhand = "none";
-        loadoutDeathStreak = "specialty_null";
+        case "assassin":
+            loadoutPrimary = "cheytac";
+            loadoutPrimaryAttachment = "none";
+            loadoutPrimaryAttachment2 = "none";
+            loadoutPrimaryCamo = "none";
+            loadoutSecondary = "none";
+            loadoutSecondaryAttachment = "none";
+            loadoutSecondaryAttachment2 = "none";
+            loadoutSecondaryCamo = "none";
+            loadoutEquipment = "specialty_null";
+            loadoutPerk1 = "specialty_fastreload";
+            loadoutPerk2 = "specialty_explosivedamage";
+            loadoutPerk3 = "specialty_heartbreaker";
+            loadoutOffhand = "none";
+            loadoutDeathStreak = "specialty_null";
+            break;
+            
+        case "guard":
+            loadoutPrimary = level.weapons[self.weaponIndex];
+            loadoutPrimaryAttachment = "none";
+            loadoutPrimaryAttachment2 = "none";
+            loadoutPrimaryCamo = "none";
+            loadoutSecondary = "none";
+            loadoutSecondaryAttachment = "none";
+            loadoutSecondaryAttachment2 = "none";
+            loadoutSecondaryCamo = "none";
+            loadoutEquipment = "specialty_null";
+            loadoutPerk1 = "specialty_null";
+            loadoutPerk2 = "specialty_null";
+            loadoutPerk3 = "specialty_null";
+            loadoutOffhand = "none";
+            loadoutDeathStreak = "specialty_null";
+            break;
+            
+        case "king":
+            loadoutPrimary = "ranger";
+            loadoutPrimaryAttachment = "none";
+            loadoutPrimaryAttachment2 = "none";
+            loadoutPrimaryCamo = "none";
+            loadoutSecondary = "coltanaconda";
+            loadoutSecondaryAttachment = "none";
+            loadoutSecondaryAttachment2 = "none";
+            loadoutSecondaryCamo = "none";
+            loadoutEquipment = "claymore_mp";
+            loadoutPerk1 = "specialty_scavenger";
+            loadoutPerk2 = "specialty_null";
+            loadoutPerk3 = "specialty_pistoldeath";
+            loadoutOffhand = "none";
+            loadoutDeathStreak = "specialty_null";
+            break;
+            
+        case "initialAssassin":
+            loadoutPrimary = "cheytac";
+            loadoutPrimaryAttachment = "none";
+            loadoutPrimaryAttachment2 = "none";
+            loadoutPrimaryCamo = "none";
+            loadoutSecondary = "none";
+            loadoutSecondaryAttachment = "none";
+            loadoutSecondaryAttachment2 = "none";
+            loadoutSecondaryCamo = "none";
+            loadoutEquipment = "semtex_mp";
+            loadoutPerk1 = "specialty_fastreload";
+            loadoutPerk2 = "specialty_bulletdamage";
+            loadoutPerk3 = "specialty_heartbreaker";
+            loadoutOffhand = "none";
+            loadoutDeathStreak = "specialty_null";
+            break;
+            
+        default:
+            loadoutPrimary = "usp";
+            loadoutPrimaryAttachment = "none";
+            loadoutPrimaryAttachment2 = "none";
+            loadoutPrimaryCamo = "none";
+            loadoutSecondary = "none";
+            loadoutSecondaryAttachment = "none";
+            loadoutSecondaryAttachment2 = "none";
+            loadoutSecondaryCamo = "none";
+            loadoutEquipment = "specialty_null";
+            loadoutPerk1 = "specialty_null";
+            loadoutPerk2 = "specialty_null";
+            loadoutPerk3 = "specialty_null";
+            loadoutOffhand = "none";
+            loadoutDeathStreak = "specialty_null";
+            break;
     }
     
     self.loadoutPrimary = loadoutPrimary;
