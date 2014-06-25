@@ -1,1 +1,8 @@
 war
+dm
+dom
+dd
+sab
+koth
+sd
+ctf
