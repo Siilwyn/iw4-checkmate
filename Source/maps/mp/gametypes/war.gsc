@@ -120,11 +120,10 @@ onPlayerConnect()
 onPlayerDisconnect()
 {
     self waittill("disconnect");
+    updateTeamScores();
     
     if(self.role == "king")
         level thread setRoles();
-    else
-        updateTeamScores();
 }
 
 setRoles()
@@ -295,9 +294,7 @@ updateWeapon()
 }
 
 addToTeam(teamName)
-{
-    updateTeamScores();
-    
+{    
     self closeMenus();
     
     if(self.team != teamName)
@@ -314,4 +311,6 @@ addToTeam(teamName)
         
         self notify("end_respawn");
     }
+    
+    updateTeamScores();
 }
