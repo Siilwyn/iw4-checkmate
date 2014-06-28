@@ -220,6 +220,7 @@ setKing()
         self thread maps\mp\gametypes\_playerlogic::spawnClient();
     
     self.role = "king";
+    self addToTeam("allies");
     
     self.maxhealth = 300;
     self.health = self.maxhealth;
@@ -230,7 +231,8 @@ setKing()
     self detachAll();
     [[game[self.team + "_model"]["RIOT"]]]();
     
-    self addToTeam("allies");
+    teamVoicePrefix = maps\mp\gametypes\_teams::getTeamVoicePrefix(player.team);
+    player playSound(teamVoicePrefix + "mp_cmd_followme");
 }
 
 setGuard()
