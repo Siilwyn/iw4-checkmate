@@ -141,7 +141,9 @@ setRoles()
         level.assassin = level.players[randomInt(level.players.size)];
     
     level.king setKing();
+    printOnPlayers(level.king + " " + "chosen as king!");
     level.assassin setInitialAssassin();
+    printOnPlayers(level.assassin + " " + "chosen as assassin!");
 }
 
 setSpecialLoadouts()
