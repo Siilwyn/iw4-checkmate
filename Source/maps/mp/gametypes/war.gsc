@@ -231,8 +231,8 @@ setKing()
     self detachAll();
     [[game[self.team + "_model"]["RIOT"]]]();
     
-    teamVoicePrefix = maps\mp\gametypes\_teams::getTeamVoicePrefix(player.team);
-    player playSound(teamVoicePrefix + "mp_cmd_followme");
+    teamVoicePrefix = maps\mp\gametypes\_teams::getTeamVoicePrefix(self.team);
+    self playSound(teamVoicePrefix + "mp_cmd_followme");
 }
 
 setGuard()
