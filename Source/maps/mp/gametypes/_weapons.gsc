@@ -589,17 +589,9 @@ handleScavengerBagPickup(scrPlayer)
     destPlayer notify("scavenger_pickup");
     destPlayer playLocalSound("scavenger_pack_pickup");
     
-    offhandWeapons = destPlayer getWeaponsListOffhands();
-    
     if(destPlayer _hasPerk("specialty_tacticalinsertion") && destPlayer getAmmoCount("flare_mp") < 1)
-        destPlayer _setPerk("specialty_tacticalinsertion"); 
+        destPlayer _setPerk("specialty_tacticalinsertion");
     
-    foreach(offhand in offhandWeapons)
-    {       
-        currentClipAmmo = destPlayer GetWeaponAmmoClip(offhand);
-        destPlayer SetWeaponAmmoClip(offhand, currentClipAmmo + 1);
-    }
-
     primaryWeapons = destPlayer getWeaponsListPrimaries();  
     foreach(primary in primaryWeapons)
     {
