@@ -207,7 +207,7 @@ giveLoadout(team, class, allowCopycat)
             loadoutPrimaryAttachment = "none";
             loadoutPrimaryAttachment2 = "none";
             loadoutPrimaryCamo = "none";
-            loadoutSecondary = "none";
+            loadoutSecondary = "usp_tactical";
             loadoutSecondaryAttachment = "none";
             loadoutSecondaryAttachment2 = "none";
             loadoutSecondaryCamo = "none";
@@ -258,7 +258,7 @@ giveLoadout(team, class, allowCopycat)
             loadoutPrimaryAttachment = "none";
             loadoutPrimaryAttachment2 = "none";
             loadoutPrimaryCamo = "none";
-            loadoutSecondary = "none";
+            loadoutSecondary = "coltanaconda_tactical";
             loadoutSecondaryAttachment = "none";
             loadoutSecondaryAttachment2 = "none";
             loadoutSecondaryCamo = "none";
