@@ -285,7 +285,7 @@ updateWeapon()
     self waittill("F");
     
     if(self.weaponIndex > level.weapons.size)
-        self.weaponIndex = level.weapons.size;
+        self.weaponIndex = level.weapons.size - 1;
     
     nextWeapon = level.weapons[self.weaponIndex] + "_mp";
     
