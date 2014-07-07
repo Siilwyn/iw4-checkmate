@@ -322,6 +322,7 @@ giveLoadout(team, class, allowCopycat)
     
     self loadoutAllPerks(loadoutEquipment, loadoutPerk1, loadoutPerk2, loadoutPerk3);
     self setKillstreaks(self.role);
+    self setSpecials(self.role);
     
     if(self hasPerk("specialty_extraammo", true))
     {
@@ -643,6 +644,21 @@ setKillstreaks(role)
     }
     
     self.killstreaks = newKillstreaks;
+}
+
+setSpecials(role)
+{
+    switch(role)
+    {
+        case "assassin":
+            self setWeaponAmmoClip("usp_tactical_mp", 0);
+            self setWeaponAmmoStock("usp_tactical_mp", 0);
+            break;
+        case "initialAssassin":
+            self setWeaponAmmoClip("coltanaconda_tactical_mp", 0);
+            self setWeaponAmmoStock("coltanaconda_tactical_mp", 0);
+            break;
+    }
 }
 
 replenishLoadout()
