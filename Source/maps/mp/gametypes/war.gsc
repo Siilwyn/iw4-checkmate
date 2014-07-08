@@ -91,7 +91,7 @@ onStartGameType()
     maps\mp\gametypes\_gameobjects::main(allowed);
     
     level thread onPlayerConnect();
-    level thread setRoles();
+    level thread setRoles(true);
     setSpecialLoadouts();
 }
 
@@ -124,13 +124,15 @@ onPlayerDisconnect()
     updateTeamScores();
     
     if(self.role == "king")
-        level thread setRoles();
+        level thread setRoles(false);
 }
 
-setRoles()
+setRoles(prematchWait)
 {
     level endon("game_ended");
-    level waittill("prematch_over");
+    
+    if(prematchWait)
+        level waittill("prematch_over");
     
     while(level.players.size < 2)
         wait(2.00);
