@@ -71,6 +71,7 @@ onStartGameType()
     
     setDvar("ui_gametype", "Checkmate");
     setDvar("didyouknow", "Checkmate modification made by Siilwyn. ^0(0.1)");
+    
     setDvar("g_TeamName_Allies", "Guardians");
     setDvar("g_TeamName_Axis", "Assassins");
     setDvar("scr_teambalance", "0");
