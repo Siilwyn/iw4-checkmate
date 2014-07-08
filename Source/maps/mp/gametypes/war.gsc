@@ -123,7 +123,7 @@ onPlayerDisconnect()
     self waittill("disconnect");
     updateTeamScores();
     
-    if(self.role == "king")
+    if(self.role == "king" || level.teamCount["axis"] == 0)
         level thread setRoles(false);
 }
 
@@ -137,8 +137,11 @@ setRoles(prematchWait)
     while(level.players.size < 2)
         wait(2.00);
     
-    level.king = level.players[randomInt(level.players.size)];
-    level.assassin = level.players[randomInt(level.players.size)];
+    if(!isDefined(level.king))
+        level.king = level.players[randomInt(level.players.size)];
+    
+    if(!isDefined(level.assassin))
+        level.assassin = level.players[randomInt(level.players.size)];
     
     while(level.king == level.assassin)
         level.assassin = level.players[randomInt(level.players.size)];
