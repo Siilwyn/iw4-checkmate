@@ -262,7 +262,12 @@ setInitialAssassin()
 setAssassin()
 {
     self.role = "assassin";
-    self.canUpgrade = false;
+    
+    if(self.canUpgrade)
+    {
+        self.canUpgrade = false;
+        self clearLowerMessage("activate");
+    }
     
     self maps\mp\gametypes\_class::giveLoadout("axis", "assassin", false);
     
