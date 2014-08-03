@@ -64,8 +64,8 @@ onStartGameType()
     setObjectiveHintText("allies", "Keep the king alive at any cost.");
     setObjectiveHintText("axis", "Eliminate the king!");
     
-    setDvarIfUninitialized("scr_cm_diehard", 2);
     setDvarIfUninitialized("scr_cm_nuke", 1);
+    setDvarIfUninitialized("scr_cm_diehard", 2);
     
     level.nuke = getDvarInt("scr_cm_nuke");
     level.dieHardMode = getDvarInt("scr_cm_diehard");
