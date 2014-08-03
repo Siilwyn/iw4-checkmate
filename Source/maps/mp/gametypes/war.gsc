@@ -75,7 +75,7 @@ onStartGameType()
     
     setDvar("g_TeamName_Allies", "Guardians");
     setDvar("g_TeamName_Axis", "Assassins");
-    setDvar("scr_teambalance", "0");
+    setDvar("scr_teambalance", 0);
     setDvar("ui_allow_teamchange", 0);
     
     level.spawnMins = (0, 0, 0);
