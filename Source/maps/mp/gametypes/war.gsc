@@ -26,6 +26,7 @@ main()
     level.onStartGameType = ::onStartGameType;
     level.getSpawnPoint = ::getSpawnPoint;
     level.onPlayerKilled = ::onPlayerKilled;
+    level.onTimeLimit = ::onTimeLimit;
     
     game["dialog"]["gametype"] = "tm_death_pro";
     
@@ -218,6 +219,11 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
     {
         self setAssassin();
     }
+}
+
+onTimeLimit()
+{
+    level thread maps\mp\gametypes\_gamelogic::endGame("allies", "The king survived.");
 }
 
 setKing()
