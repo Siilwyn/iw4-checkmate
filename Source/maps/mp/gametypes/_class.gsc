@@ -608,8 +608,8 @@ setKillstreaks(role)
     
     if(role == "guard"){
         killStreaks[4] = "airdrop";
-        killStreaks[8] = "precision_airstrike";
-        killStreaks[16] = "predator_missile";
+        killStreaks[6] = "precision_airstrike";
+        killStreaks[14] = "predator_missile";
         killStreaks[20] = "sentry";
         killStreaks[32] = "ac130";
         if(level.nuke)
