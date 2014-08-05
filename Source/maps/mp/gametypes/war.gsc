@@ -64,11 +64,16 @@ onStartGameType()
     setObjectiveHintText("allies", "Keep the king alive at any cost.");
     setObjectiveHintText("axis", "Eliminate the king!");
     
+    setDvarIfUninitialized("scr_cm_timelimit", 5);
     setDvarIfUninitialized("scr_cm_nuke", 1);
     setDvarIfUninitialized("scr_cm_diehard", 2);
+    setDvarIfUninitialized("scr_cm_falldamage", 1);
     
+    level.timeLimit = getDvarInt("scr_cm_timelimit");
+    level.scoreLimit = getDvarInt("sv_maxclients");
     level.nuke = getDvarInt("scr_cm_nuke");
     level.dieHardMode = getDvarInt("scr_cm_diehard");
+    level.fallDamage = getDvarInt("scr_cm_falldamage");
     
     setDvar("ui_gametype", "Checkmate");
     setDvar("didyouknow", "Checkmate modification made by Siilwyn. ^0(0.2)");
