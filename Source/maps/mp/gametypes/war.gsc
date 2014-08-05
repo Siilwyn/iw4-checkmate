@@ -155,9 +155,9 @@ setRoles(prematchWait)
         level.assassin = level.players[randomInt(level.players.size)];
     
     level.king thread setKing();
-    printOnPlayers(level.king + " " + "chosen as king!");
+    printOnPlayers(level.king.name + " " + "chosen as king!");
     level.assassin setInitialAssassin();
-    printOnPlayers(level.assassin + " " + "chosen as assassin!");
+    printOnPlayers(level.assassin.name + " " + "chosen as assassin!");
 }
 
 setSpecialLoadouts()
