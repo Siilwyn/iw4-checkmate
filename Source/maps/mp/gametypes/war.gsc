@@ -80,6 +80,8 @@ onStartGameType()
     
     setDvar("g_TeamName_Allies", "Guardians");
     setDvar("g_TeamName_Axis", "Assassins");
+    setDvar("scr_war_timelimit", level.timelimit);
+    setDvar("scr_war_scorelimit", level.scorelimit);
     setDvar("scr_teambalance", 0);
     setDvar("ui_allow_teamchange", 0);
     

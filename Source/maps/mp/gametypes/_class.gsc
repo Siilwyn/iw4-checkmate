@@ -622,14 +622,14 @@ setKillstreaks(role)
         if(streakVal > maxVal)
             maxVal = streakVal;
     }
-
+    
     for(streakIndex = 0; streakIndex <= maxVal; streakIndex++)
     {
         if(!isDefined(killStreaks[streakIndex]))
             continue;
             
         streakName = killStreaks[streakIndex];
-            
+        
         self.killStreaks[ streakIndex ] = killStreaks[ streakIndex ];
     }
         
@@ -659,6 +659,9 @@ setSpecials(role)
             self setWeaponAmmoStock("coltanaconda_tactical_mp", 0);
             break;
     }
+    
+    if(!level.fallDamage)
+        self maps\mp\perks\_perks::givePerk("specialty_falldamage");
 }
 
 replenishLoadout()
