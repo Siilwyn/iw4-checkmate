@@ -154,7 +154,7 @@ setRoles(prematchWait)
     while(level.king == level.assassin)
         level.assassin = level.players[randomInt(level.players.size)];
     
-    level.king setKing();
+    level.king thread setKing();
     printOnPlayers(level.king + " " + "chosen as king!");
     level.assassin setInitialAssassin();
     printOnPlayers(level.assassin + " " + "chosen as assassin!");
@@ -250,6 +250,7 @@ setKing()
     self detachAll();
     [[game[self.team + "_model"]["RIOT"]]]();
     
+    wait(3.00);
     teamVoicePrefix = maps\mp\gametypes\_teams::getTeamVoicePrefix(self.team);
     self playSound(teamVoicePrefix + "mp_cmd_followme");
 }
