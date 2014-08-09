@@ -122,8 +122,132 @@ onPlayerConnect()
         else
             player setGuard();
         
+        player thread toggleDescription();
         player thread onPlayerDisconnect();
     }
+}
+
+toggleDescription()
+{
+    self endon("disconnect");
+    
+    self.descriptionElem = createDescription();
+    self.inMenu = false;
+    
+    wait(20.00);
+    
+    while(!level.gameEnded)
+    {
+        self waittill("use_description");
+        
+        if(!self.inMenu)
+        {
+            self.inMenu = true;
+            
+            self setClientDvar("ui_drawcrosshair", 0);
+            
+            self.descriptionElem fadeOverTime(1);
+            self.descriptionElem.alpha = 0.75;
+            self.descriptionElem.title fadeOverTime(1);
+            self.descriptionElem.title.alpha = 1;
+            self.descriptionElem.titleSub fadeOverTime(1);
+            self.descriptionElem.titleSub.alpha = 1;
+            self.descriptionElem.content fadeOverTime(1);
+            self.descriptionElem.content.alpha = 1;
+            self.descriptionElem.content2 fadeOverTime(1);
+            self.descriptionElem.content2.alpha = 1;
+            self.descriptionElem.content3 fadeOverTime(1);
+            self.descriptionElem.content3.alpha = 1;
+            self.descriptionElem.content4 fadeOverTime(1);
+            self.descriptionElem.content4.alpha = 1;
+        }
+        else if(self.inMenu)
+        {
+            self.inMenu = false;
+            
+            self setClientDvar("ui_drawcrosshair", 1);
+            self setWaterSheeting(1, 2);
+            
+            self.descriptionElem fadeOverTime(0.8);
+            self.descriptionElem.alpha = 0;
+            self.descriptionElem.title fadeOverTime(0.8);
+            self.descriptionElem.title.alpha = 0;
+            self.descriptionElem.titleSub fadeOverTime(0.8);
+            self.descriptionElem.titleSub.alpha = 0;
+            self.descriptionElem.content fadeOverTime(0.8);
+            self.descriptionElem.content.alpha = 0;
+            self.descriptionElem.content2 fadeOverTime(0.8);
+            self.descriptionElem.content2.alpha = 0;
+            self.descriptionElem.content3 fadeOverTime(0.8);
+            self.descriptionElem.content3.alpha = 0;
+            self.descriptionElem.content4 fadeOverTime(0.8);
+            self.descriptionElem.content4.alpha = 0;
+        }
+    }
+}
+
+createDescription()
+{
+    containerElem = newClientHudElem(self);
+    containerElem.elemType = "bar";
+    containerElem.width = 300;
+    containerElem.height = 300;
+    containerElem.color = (0, 0, 0);
+    containerElem.alpha = 0;
+    containerElem.children = [];
+    containerElem setParent(level.uiParent);
+    containerElem setShader("black", 1000, 1000);
+    containerElem setPoint("CENTER", "CENTER", 0, 0);
+    
+    containerElem.title = createFontString("bigfixed", 0.8);
+    containerElem.title.point = "TOPLEFT";
+    containerElem.title.xOffset = 10;
+    containerElem.title.yOffset = 7;
+    containerElem.title.alpha = 0;
+    containerElem.title setParent(containerElem);
+    containerElem.title setText("Checkmate ^80.2");
+    
+    containerElem.titleSub = createFontString("default", 0.8);
+    containerElem.titleSub.point = "TOPLEFT";
+    containerElem.titleSub.xOffset = 11;
+    containerElem.titleSub.yOffset = 25;
+    containerElem.titleSub.alpha = 0;
+    containerElem.titleSub setParent(containerElem);
+    containerElem.titleSub setText("By Siilwyn.");
+    
+    containerElem.content = createFontString("default", 1.0);
+    containerElem.content.point = "TOPLEFT";
+    containerElem.content.xOffset = 11;
+    containerElem.content.yOffset = 45;
+    containerElem.content.alpha = 0;
+    containerElem.content setParent(containerElem);
+    containerElem.content setText("Two teams, the assassins and the guardians, battle respectively to kill or\ndefend the king. At the start of a game two players get randomly picked\nto be the king or first assassin. The assassins win the game by killing");
+    
+    containerElem.content2 = createFontString("default", 1.0);
+    containerElem.content2.point = "TOPLEFT";
+    containerElem.content2.xOffset = 11;
+    containerElem.content2.yOffset = 80;
+    containerElem.content2.alpha = 0;
+    containerElem.content2 setParent(containerElem);
+    containerElem.content2 setText("the king while the guardians and king win by surviving. The assassins\nstrive to kill the king, they can get more allies by killing guardians\nas they turn into assassins when killed.");
+    
+    containerElem.content3 = createFontString("default", 1.0);
+    containerElem.content3.point = "TOPLEFT";
+    containerElem.content3.xOffset = 11;
+    containerElem.content3.yOffset = 115;
+    containerElem.content3.alpha = 0;
+    containerElem.content3 setParent(containerElem);
+    containerElem.content3 setText("The king on the other hand tries to stay alive and can turn assassins\ninto guardians by killing them.");
+    
+    containerElem.content4 = createFontString("default", 1.0);
+    containerElem.content4.point = "TOPLEFT";
+    containerElem.content4.xOffset = 11;
+    containerElem.content4.yOffset = 145;
+    containerElem.content4.alpha = 0;
+    containerElem.content4 setParent(containerElem);
+    containerElem.content4 setText("Guardians start with a pistol and with each kill they get a better weapon,\nthe king has claymores, a shotgun and a pistol.\nThe assassins wear snipers and a tactical knife, the first assassin is\ndangerous because of his semtex and stopping power perk.");
+    
+    return containerElem;
 }
 
 onPlayerDisconnect()
