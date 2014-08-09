@@ -117,8 +117,8 @@ onPlayerConnect()
         player setClientDvar("cg_scoreboardPingText", 1);
         player setClientDvar("cg_fovScale", 1.125);
         
-        self notifyOnPlayerCommand("use_upgrade", "+activate");
-        self notifyOnPlayerCommand("use_description", "+actionslot 1");
+        player notifyOnPlayerCommand("use_upgrade", "+activate");
+        player notifyOnPlayerCommand("use_description", "+actionslot 1");
         
         if(isDefined(level.king))
             player setAssassin();
