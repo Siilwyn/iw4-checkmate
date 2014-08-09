@@ -433,7 +433,7 @@ updateWeapon()
     
     currentWeapon = level.weapons[self.weaponIndex - 1] + "_mp";
     
-    self waittill("F");
+    self waittill("use_upgrade");
     
     if(self.weaponIndex >= level.weapons.size)
         self.weaponIndex = level.weapons.size - 1;
