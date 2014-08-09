@@ -117,6 +117,9 @@ onPlayerConnect()
         player setClientDvar("cg_scoreboardPingText", 1);
         player setClientDvar("cg_fovScale", 1.125);
         
+        self notifyOnPlayerCommand("use_upgrade", "+activate");
+        self notifyOnPlayerCommand("use_description", "+actionslot 1");
+        
         if(isDefined(level.king))
             player setAssassin();
         else
@@ -430,7 +433,6 @@ updateWeapon()
     
     currentWeapon = level.weapons[self.weaponIndex - 1] + "_mp";
     
-    self notifyOnPlayerCommand("F", "+activate");
     self waittill("F");
     
     if(self.weaponIndex >= level.weapons.size)
