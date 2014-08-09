@@ -17,20 +17,24 @@ The assassins wear snipers, the first picked assassin is stronger because of his
 
     scr_cm_timelimit
 
-A number between 1 and 10, default: 5.
 The amount of time in minutes the king has to survive to win.
+
+A number between 1 and 10, default: 5.
 
     scr_cm_nuke
 
 Wether a guardian can achieve a nuke by getting a killstreak.
+
 Either true (0) or false (1), default: 1.
 
     scr_cm_diehard
 
 If the king can get in final stand and in what mode.
+
 Has three modes 0, 1 or 2, default: 2.
 
     scr_cm_falldamage
 
 If players get hit by falling a large distance.
+
 Either false (0) or true (1), default: 1.
