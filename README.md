@@ -1,6 +1,6 @@
 Checkmate
 =========
-###### Version 0.2
+###### Version 0.3
 
 Checkmate is a brand new gametype for IW4M.
 

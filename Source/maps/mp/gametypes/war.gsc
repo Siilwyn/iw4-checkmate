@@ -2,7 +2,7 @@
 // Thanks to the community at http://itsmods.com/
 
 // https://github.com/Siilwyn/iw4-checkmate/
-// Version 0.2
+// Version 0.3
 
 #include maps\mp\_utility;
 #include maps\mp\gametypes\_hud_util;
@@ -76,7 +76,7 @@ onStartGameType()
     level.fallDamage = getDvarInt("scr_cm_falldamage");
     
     setDvar("ui_gametype", "Checkmate");
-    setDvar("didyouknow", "Checkmate modification made by Siilwyn. ^0(0.2)");
+    setDvar("didyouknow", "Checkmate modification made by Siilwyn. ^0(0.3)");
     
     setDvar("g_TeamName_Allies", "Guardians");
     setDvar("g_TeamName_Axis", "Assassins");
@@ -208,7 +208,7 @@ createDescription()
     containerElem.title.yOffset = 7;
     containerElem.title.alpha = 0;
     containerElem.title setParent(containerElem);
-    containerElem.title setText("Checkmate ^80.2");
+    containerElem.title setText("Checkmate ^80.3");
     
     containerElem.titleSub = createFontString("default", 0.8);
     containerElem.titleSub.point = "TOPLEFT";
