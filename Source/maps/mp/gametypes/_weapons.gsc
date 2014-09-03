@@ -820,8 +820,8 @@ watchGrenadeUsage()
     thread watchC4();
     thread watchC4Detonation();
     thread watchC4AltDetonation();
-
-        if(level.teamBased &    thread deleteC4AndClaymoresOnDisconnect();
+    thread watchClaymores();
+    thread deleteC4AndClaymoresOnDisconnect();
 
     self thread watchForThrowbacks();
 
@@ -2206,4 +2206,5 @@ turret_playerThread(player)
 
     self waittill("turret_deactivate");
 
-    player notify("weapon_change", player getCurrentWeapon())
+    player notify("weapon_change", player getCurrentWeapon());
+}
